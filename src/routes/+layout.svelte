@@ -17,12 +17,4 @@
 </div>
 
 <style>
-	.app {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		height: 100%;
-	}
 </style>

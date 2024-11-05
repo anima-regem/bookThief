@@ -20,6 +20,10 @@ Ever wished you could tell an AI "I'm feeling like a grumpy cat who enjoys world
 ```bash
 git clone https://github.com/your-cool-username/book-thief.git
 ```
+in the offchace you forked this thing, else:
+```bash
+git clone https://github.com/anima-regem/book-thief.git
+```
 
 2. Install stuff:
 ```bash
@@ -28,7 +32,7 @@ npm install # This is where you pray to the npm gods
 
 3. Create a `.env` file and add your super secret stuff:
 ```
-AI_API_KEY=pinky-promise-not-to-share
+GROQ_API_KEY=pinky-promise-not-to-share
 ```
 
 4. Fire it up:

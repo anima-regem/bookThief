@@ -31,20 +31,21 @@ export async function POST({ request }) {
 				}
 			],
 
-			model: 'llama-3.2-3b-preview',
+			model: 'llama-3.3-70b-versatile',
 			temperature: 0.2
 		});
 
 		const completion = chatCompletion.choices[0]?.message?.content || 'No response generated';
+		console.log('Completion:', completion);
 
 		const responseObject = JSON.parse(completion);
-		for (let i = 0; i < responseObject.length; i++) {
-			const search_link = responseObject[i].search_link;
-			const res = await fetch(search_link);
-			const data = await res.json();
-			const imgURL = `https://covers.openlibrary.org/b/id/${data.docs[0].cover_i}-L.jpg`;
-			responseObject[i].imgURL = imgURL;
-		}
+		// for (let i = 0; i < responseObject.length; i++) {
+		// 	const search_link = responseObject[i].search_link;
+		// 	const res = await fetch(search_link);
+		// 	const data = await res.json();
+		// 	const imgURL = `https://covers.openlibrary.org/b/id/${data.docs[0].cover_i}-L.jpg`;
+		// 	responseObject[i].imgURL = imgURL;
+		// }
 		console.log('Response:',responseObject );
 		return json(responseObject);
 	} catch (error) {
